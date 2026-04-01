@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>콜라보 제안 — MKWAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- suggest 폴더 기준이므로 상위 경로의 CSS 참조 -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">MK<span>WAY</span></a>
+      <button class="nav__hamburger" id="hamburger" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="/" class="nav__link">소개</a></li>
+        <li><a href="/suggest" class="nav__link active">콜라보 제안</a></li>
+        <li><a href="/#contact" class="nav__link nav__cta">문의하기</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
+  <section class="proposal-hero">
+    <div class="container">
+      <p class="section-eyebrow">Collaboration Proposal</p>
+      <h1 class="proposal-hero__title">AI 인플루언서<br/>콜라보 제안 서비스</h1>
+      <p class="proposal-hero__sub">원하는 키워드로 인플루언서를 찾고,<br/>AI가 맞춤 제안 메시지를 작성해 드립니다.</p>
+    </div>
+    <div class="proposal-hero__steps">
+      <div class="container">
+        <div class="steps-row">
+          <div class="step-pill step-pill--active">
+            <span class="step-pill__num">01</span>
+            <span class="step-pill__label">인플루언서 검색</span>
+          </div>
+          <div class="step-pill__arrow">→</div>
+          <div class="step-pill">
+            <span class="step-pill__num">02</span>
+            <span class="step-pill__label">결과 확인 및 선택</span>
+          </div>
+          <div class="step-pill__arrow">→</div>
+          <div class="step-pill">
+            <span class="step-pill__num">03</span>
+            <span class="step-pill__label">AI 메시지 생성</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       STEP 01 — 검색 & 필터
+  ════════════════════════════════════ -->
+  <section class="search-section" id="step01">
+    <div class="container">
+      <div class="step-badge">STEP 01</div>
+      <h2 class="step-title">인플루언서 검색</h2>
+
+      <div class="search-box">
+        <input type="text" id="searchKeyword" class="search-input"
+          placeholder="키워드 입력 (예: 뷰티, 먹방, 피트니스, 테크...)" />
+        <button class="search-btn" id="searchBtn" onclick="searchInfluencers()">
+          <span id="searchBtnText">검색하기</span>
+        </button>
+      </div>
+
+      <div class="filters-panel">
+        <h3 class="filters-title">상세 필터</h3>
+        <div class="filters-grid">
+
+          <div class="filter-group">
+            <label class="filter-label">플랫폼</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" name="platform" value="youtube" checked /> YouTube
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="platform" value="tiktok" checked /> TikTok
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="platform" value="instagram" checked /> Instagram
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">국가</label>
+            <select class="filter-select" id="filterCountry">
+              <option value="">전체</option>
+              <option value="KR">한국</option>
+              <option value="US">미국</option>
+              <option value="JP">일본</option>
+              <option value="TW">대만</option>
+              <option value="TH">태국</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">구독자 수</label>
+            <div class="range-inputs">
+              <input type="number" id="subMin" placeholder="최소" class="range-input" />
+              <span class="range-sep">~</span>
+              <input type="number" id="subMax" placeholder="최대" class="range-input" />
+              <span class="range-unit">명</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">평균 조회수</label>
+            <div class="range-inputs">
+              <input type="number" id="viewMin" placeholder="최소" class="range-input" />
+              <span class="range-sep">~</span>
+              <input type="number" id="viewMax" placeholder="최대" class="range-input" />
+              <span class="range-unit">회</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       STEP 02 — 검색 결과
+  ════════════════════════════════════ -->
+  <section class="results-section" id="step02">
+    <div class="container">
+      <div class="step-badge">STEP 02</div>
+      <h2 class="step-title">검색 결과</h2>
+      <p class="results-meta" id="resultsMeta"></p>
+
+      <div class="results-grid" id="resultsGrid" style="display:none;"></div>
+
+      <div class="empty-state" id="emptyState">
+        <span class="empty-icon">🔍</span>
+        <p>키워드를 입력하고 인플루언서를 검색해보세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       STEP 03 — AI 제안 메시지
+  ════════════════════════════════════ -->
+  <section class="ai-section" id="step03">
+    <div class="container">
+      <div class="step-badge">STEP 03</div>
+      <h2 class="step-title">AI 콜라보 제안 메시지 작성</h2>
+      <p class="step-desc">선택한 인플루언서와의 협업 제안 메시지를 AI가 자동으로 작성합니다.</p>
+
+      <div class="ai-form">
+
+        <div class="ai-form__selected" id="selectedInfluencer">
+          <p class="ai-form__hint">📌 위 결과에서 인플루언서를 선택하면 여기에 표시됩니다.</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="brandName">브랜드명</label>
+            <input type="text" id="brandName" placeholder="예: 루나 스킨케어" />
+          </div>
+          <div class="form-group">
+            <label for="productName">제품 / 서비스명</label>
+            <input type="text" id="productName" placeholder="예: 비타민C 세럼" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="campaignGoal">캠페인 목표</label>
+          <input type="text" id="campaignGoal" placeholder="예: 신제품 론칭 홍보, 브랜드 인지도 향상" />
+        </div>
+
+        <div class="form-group">
+          <label>메시지 유형</label>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="messageType" value="dm" checked />
+              DM <small>(짧고 친근하게)</small>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="messageType" value="email" />
+              이메일 <small>(공식적이고 상세하게)</small>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--full btn--ai" id="generateBtn" onclick="generateProposal()">
+          <span class="btn-icon">✨</span> AI 제안 메시지 생성하기
+        </button>
+      </div>
+
+      <!-- AI 결과 -->
+      <div class="ai-result" id="aiResult">
+        <div class="ai-result__header">
+          <h3>생성된 제안 메시지</h3>
+          <button class="copy-btn" onclick="copyMessage()">📋 복사하기</button>
+        </div>
+        <div class="ai-result__content" id="aiResultContent"></div>
+        <div class="ai-result__actions">
+          <button class="btn btn--ghost btn--sm" onclick="generateProposal()">🔄 다시 생성</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo">MK<span>WAY</span></a>
+          <p>브랜드와 인플루언서를 잇는 가장 스마트한 방법</p>
+        </div>
+        <div class="footer__links">
+          <h4>서비스</h4>
+          <ul>
+            <li><a href="/">에이전시 소개</a></li>
+            <li><a href="/#portfolio">포트폴리오</a></li>
+            <li><a href="/suggest">콜라보 제안</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>문의</h4>
+          <ul>
+            <li>hello@mkway.co.kr</li>
+            <li>02-1234-5678</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 MKWAY. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- suggest 전용 JS -->
+  <script src="../suggest.js"></script>
+</body>
+</html>

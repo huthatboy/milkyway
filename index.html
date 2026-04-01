@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKWAY — Influencer Marketing Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">MK<span>WAY</span></a>
+      <button class="nav__hamburger" id="hamburger" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="/" class="nav__link active">소개</a></li>
+        <li><a href="/suggest" class="nav__link">콜라보 제안</a></li>
+        <li><a href="#contact" class="nav__link nav__cta">문의하기</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__bg-text">MKWAY</div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Influencer Marketing Agency</p>
+      <h1 class="hero__title">
+        브랜드와 인플루언서를<br />
+        <em>연결</em>하는 가장 스마트한 방법
+      </h1>
+      <p class="hero__sub">콜라보 제안부터 캠페인 운영까지, MKWAY가 함께합니다.</p>
+      <div class="hero__btns">
+        <a href="/suggest" class="btn btn--primary">콜라보 제안 시작하기</a>
+        <a href="#about" class="btn btn--ghost">더 알아보기</a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__blob"></div>
+      <div class="hero__stat-card hero__stat-card--1">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">협업 인플루언서</span>
+      </div>
+      <div class="hero__stat-card hero__stat-card--2">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">고객 만족도</span>
+      </div>
+      <div class="hero__stat-card hero__stat-card--3">
+        <span class="stat-num">3.2M</span>
+        <span class="stat-label">누적 도달 팔로워</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">About Us</p>
+        <h2 class="section-title">MKWAY는 이런 회사입니다</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text">
+          <p>MKWAY는 브랜드와 인플루언서를 연결하는 전문 마케팅 에이전시입니다. 단순한 광고 집행을 넘어, 브랜드의 스토리를 진정성 있게 전달할 인플루언서를 발굴하고 최적의 콜라보레이션을 기획합니다.</p>
+          <p>YouTube, TikTok, Instagram 등 다양한 플랫폼에서 검증된 인플루언서 네트워크를 바탕으로, 소규모 스타트업부터 대기업까지 맞춤형 마케팅 솔루션을 제공합니다.</p>
+          <ul class="about__features">
+            <li><span class="feature-icon">✦</span> 데이터 기반 인플루언서 매칭</li>
+            <li><span class="feature-icon">✦</span> AI 활용 맞춤 제안서 작성</li>
+            <li><span class="feature-icon">✦</span> 글로벌 인플루언서 네트워크</li>
+            <li><span class="feature-icon">✦</span> 전담 캠페인 매니저 배정</li>
+          </ul>
+        </div>
+        <div class="about__numbers">
+          <div class="number-card">
+            <span class="number-card__num">5+</span>
+            <span class="number-card__label">Year<br/>Experience</span>
+          </div>
+          <div class="number-card">
+            <span class="number-card__num">200+</span>
+            <span class="number-card__label">Brand<br/>Partners</span>
+          </div>
+          <div class="number-card">
+            <span class="number-card__num">15</span>
+            <span class="number-card__label">Countries<br/>Covered</span>
+          </div>
+          <div class="number-card">
+            <span class="number-card__num">1.2B</span>
+            <span class="number-card__label">Total<br/>Impressions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PORTFOLIO — 영상 캐러샐
+  ════════════════════════════════════ -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Portfolio</p>
+        <h2 class="section-title">주요 협업 사례</h2>
+        <p class="section-desc">MKWAY와 함께한 인플루언서 콜라보레이션 영상입니다.</p>
+      </div>
+    </div>
+
+    <!-- 캐러샐 전체 너비 -->
+    <div class="carousel-wrapper">
+      <button class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="이전">&#8592;</button>
+
+      <div class="carousel-track-container" id="carouselContainer">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- 영상 1 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="협업 영상 1" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 2 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/9bZkp7q19f0"
+                title="협업 영상 2" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 3 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/JGwWNGJdvx8"
+                title="협업 영상 3" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 4 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk"
+                title="협업 영상 4" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 5 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/OPf0YbXqDm0"
+                title="협업 영상 5" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 6 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ"
+                title="협업 영상 6" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 7 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/hT_nvWreIhg"
+                title="협업 영상 7" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 8 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ"
+                title="협업 영상 8" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 9 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE"
+                title="협업 영상 9" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- 영상 10 -->
+          <div class="carousel-slide">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/YykjpeuMNEk"
+                title="협업 영상 10" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+      </div><!-- /carousel-track-container -->
+
+      <button class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="다음">&#8594;</button>
+    </div><!-- /carousel-wrapper -->
+
+    <!-- 도트 인디케이터 -->
+    <div class="carousel-dots" id="carouselDots"></div>
+
+  </section>
+
+  <!-- ════════════════════════════════════
+       CTA BANNER
+  ════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-banner__inner">
+        <div>
+          <h2 class="cta-banner__title">지금 바로 인플루언서를 찾아보세요</h2>
+          <p class="cta-banner__sub">AI가 브랜드에 맞는 최적의 콜라보 메시지를 작성해드립니다.</p>
+        </div>
+        <a href="/suggest" class="btn btn--white">콜라보 제안 시작하기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__text">
+          <p class="section-eyebrow">Contact</p>
+          <h2 class="section-title">함께 시작할 준비가<br/>되셨나요?</h2>
+          <p>브랜드에 맞는 최적의 인플루언서 마케팅 전략을 함께 만들어 드립니다.</p>
+          <ul class="contact__info">
+            <li>📧 hello@mkway.co.kr</li>
+            <li>📞 02-1234-5678</li>
+            <li>📍 서울특별시 강남구 테헤란로 123</li>
+          </ul>
+        </div>
+        <form class="contact__form" id="contactForm">
+          <div class="form-group">
+            <label for="cName">브랜드 / 회사명</label>
+            <input type="text" id="cName" placeholder="브랜드명을 입력하세요" />
+          </div>
+          <div class="form-group">
+            <label for="cEmail">이메일</label>
+            <input type="email" id="cEmail" placeholder="example@company.com" />
+          </div>
+          <div class="form-group">
+            <label for="cMsg">문의 내용</label>
+            <textarea id="cMsg" rows="4" placeholder="어떤 도움이 필요하신가요?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">문의 보내기</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo">MK<span>WAY</span></a>
+          <p>브랜드와 인플루언서를 잇는 가장 스마트한 방법</p>
+        </div>
+        <div class="footer__links">
+          <h4>서비스</h4>
+          <ul>
+            <li><a href="/">에이전시 소개</a></li>
+            <li><a href="#portfolio">포트폴리오</a></li>
+            <li><a href="/suggest">콜라보 제안</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>문의</h4>
+          <ul>
+            <li>hello@mkway.co.kr</li>
+            <li>02-1234-5678</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 MKWAY. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
