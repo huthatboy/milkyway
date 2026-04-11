@@ -8,14 +8,24 @@ const generateRoute = require("./routes/generate");
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// CORS 설정 — Vercel 도메인 허용
+app.use(cors({
+  origin: [
+    "https://mkway.co.kr",
+    "https://www.mkway.co.kr",
+    "http://localhost:3000",
+    "http://127.0.0.1:5500",
+  ],
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("✅ MongoDB 연결 성공"))
   .catch((err) => console.error("❌ MongoDB 연결 실패:", err));
 
-// 라우트 등록
 app.use("/api/generate", generateRoute);
 
 app.get("/", (req, res) => {
