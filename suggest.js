@@ -8,7 +8,7 @@
 // 🔧 백엔드 서버 주소
 // 배포 시 실제 서버 주소로 교체
 // ──────────────────────────────────────
-const API_BASE_URL = "milkyway-production-562d.up.railway.app";
+const API_BASE_URL = "https://milkyway-production-562d.up.railway.app";
 
 
 // ──────────────────────────────────────
