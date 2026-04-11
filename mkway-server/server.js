@@ -3,6 +3,9 @@ const mongoose   = require("mongoose");
 const cors       = require("cors");
 require("dotenv").config();
 
+console.log("MONGODB_URI 존재 여부:", !!process.env.MONGODB_URI);
+console.log("OPENAI_API_KEY 존재 여부:", !!process.env.OPENAI_API_KEY);
+
 const generateRoute = require("./routes/generate");
 
 const app  = express();
