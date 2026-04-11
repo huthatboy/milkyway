@@ -16,6 +16,7 @@
   --border:       rgba(255,179,142,0.25);
 
   --font-display: 'Playfair Display', Georgia, serif;
+  --font-gothic:  'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
   --font-body:    'DM Sans', sans-serif;
 
   --radius-sm:    8px;
@@ -224,13 +225,13 @@ ul { list-style: none; }
   margin-bottom: 20px;
 }
 .hero__title {
-  font-family: var(--font-display);
+  font-family: var(--font-gothic);
   font-size: clamp(2rem, 4.5vw, 3.4rem);
   font-weight: 900;
-  line-height: 1.15;
+  line-height: 1.25;
   margin-bottom: 20px;
 }
-.hero__title em { font-style: italic; color: var(--peach-dark); }
+.hero__title em { font-style: normal; color: var(--peach-dark); }
 .hero__sub { font-size: 1.05rem; color: var(--gray); margin-bottom: 36px; line-height: 1.7; }
 .hero__btns { display: flex; gap: 12px; flex-wrap: wrap; }
 
